@@ -12,11 +12,11 @@ echo -e "${GREEN}🚀 Iniciando proceso de despliegue...${NC}"
 
 # 1. Compilar el proyecto con Maven
 echo -e "${YELLOW}🔍 Compilando proyecto con Maven...${NC}"
-mvn clean package -DskipTests
-if [ $? -ne 0 ]; then
-    echo -e "${RED}❌ Error al compilar el proyecto.${NC}"
-    exit 1
-fi
+#mvn clean package -DskipTests
+#if [ $? -ne 0 ]; then
+#    echo -e "${RED}❌ Error al compilar el proyecto.${NC}"
+#    exit 1
+#fi
 
 # 2. Construir la imagen Docker
 echo -e "${YELLOW}🐳 Construyendo imagen Docker: $IMAGE_NAME${NC}"
