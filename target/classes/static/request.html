@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probar API REST</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .container { max-width: 600px; margin: auto; }
+        input, textarea, button { width: 100%; margin: 8px 0; padding: 10px; }
+        textarea { height: 100px; }
+        .response { background: #f4f4f4; padding: 10px; margin-top: 10px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Probar API REST</h1>
+        <label>URL del API:</label>
+        <input type="text" id="url" placeholder="http://localhost:8080/api/endpoint">
+
+        <label>Método:</label>
+        <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+
+        <label>Datos (JSON):</label>
+        <textarea id="data" placeholder='{"key":"value"}'></textarea>
+
+        <button onclick="sendRequest()">Enviar</button>
+
+        <h3>Respuesta:</h3>
+        <div class="response" id="response"></div>
+    </div>
+
+    <script>
+        async function sendRequest() {
+            const url = document.getElementById('url').value;
+            const method = document.getElementById('method').value;
+            const data = document.getElementById('data').value;
+
+            let options = { method: method, headers: { 'Content-Type': 'application/json' } };
+            if (method !== 'GET' && method !== 'DELETE' && data) {
+                options.body = data;
+            }
+
+            try {
+                const res = await fetch(url, options);
+                const text = await res.text();
+                document.getElementById('response').textContent = text;
+            } catch (error) {
+                document.getElementById('response').textContent = 'Error: ' + error;
+            }
+        }
+    </script>
+</body>
+</html>
