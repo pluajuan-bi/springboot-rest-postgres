@@ -1,0 +1,41 @@
+### API REST Requests
+
+# GET: Obtener lista de usuarios
+GET http://localhost:9080/api/usuarios
+Accept: application/json
+
+###
+
+# GET: Obtener usuario por ID
+GET http://localhost:9080/api/usuarios/1
+Accept: application/json
+
+###
+
+# POST: Crear nuevo usuario
+POST http://localhost:9080/api/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "Elena",
+  "email": "elena@example.com",
+  "edad": 36
+}
+
+###
+
+# PUT: Actualizar usuario existente
+PUT http://localhost:9080/api/usuarios/1
+Content-Type: application/json
+
+{
+  "nombre": "Juan Actualizado",
+  "email": "juan.actualizado@example.com",
+  "edad": 31
+}
+
+###
+
+# DELETE: Eliminar usuario
+DELETE http://localhost:9080/api/usuarios/1
+Accept: application/json

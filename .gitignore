@@ -1,0 +1,41 @@
+# Archivos de IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Archivos de compilación
+target/
+build/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Archivos de Gradle
+.gradle/
+build/
+
+# Archivos de configuración de usuario
+*.properties.local
+*.yaml.local
+
+# Archivos de cobertura y reportes
+*.coverage
+*.coverage.xml
+
+# Archivos generados por Spring Boot
+*.pid
+
+# Archivos de Docker
+docker-compose.override.yml
