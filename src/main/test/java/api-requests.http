@@ -1,7 +1,7 @@
 ### API REST Requests
 
 # GET: Obtener lista de usuarios
-GET http://192.168.100.20:9082/api/usuarios
+GET http://localhost:9082/api/usuarios
 Accept: application/json
 
 ###
@@ -37,5 +37,5 @@ Content-Type: application/json
 ###
 
 # DELETE: Eliminar usuario
-DELETE http://localhost:9082/api/usuarios/1
+DELETE http://localhost:9082/api/usuarios/6
 Accept: application/json

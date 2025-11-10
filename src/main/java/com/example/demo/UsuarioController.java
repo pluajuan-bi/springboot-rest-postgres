@@ -18,6 +18,12 @@ public class UsuarioController {
     public List<Usuario> listarUsuarios() {
         return usuarioRepository.findAll();
     }
+    // Buscar usuario por ID
+    @GetMapping("/{id}")
+    public Usuario buscarUsuarioPorId(@PathVariable Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + id));
+    }
 
     // Crear un nuevo usuario
     @PostMapping
